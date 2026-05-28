@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="screen-loading" class="screen active" role="status" aria-live="polite">
+    <div class="loader-wrap">
+      <div class="loader"></div>
+      <p>Загрузка...</p>
+    </div>
+  </div>
+
+  <div id="screen-quiz" class="screen" role="main">
+    <div class="quiz-card">
+      <header class="quiz-header">
+        <h1 id="quiz-title" class="quiz-title"></h1>
+        <div class="quiz-meta">
+          <span id="progress-text" aria-live="polite"></span>
+          <span id="timer" class="timer" aria-live="polite" aria-label="Оставшееся время"></span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </header>
+
+      <section class="question-section">
+        <p id="question-text" class="question-text"></p>
+        <ul id="options-list" class="options-list" role="radiogroup" aria-label="Варианты ответа"></ul>
+      </section>
+
+      <footer class="quiz-footer">
+        <button id="btn-prev" class="btn btn-secondary" aria-label="Предыдущий вопрос">Назад</button>
+        <button id="btn-next" class="btn btn-primary" aria-label="Следующий вопрос">Далее</button>
+        <button id="btn-finish" class="btn btn-finish" aria-label="Завершить тест">Завершить</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen" role="main">
+    <div class="result-card">
+      <h2 id="result-status" class="result-status"></h2>
+      <p id="result-score" class="result-score"></p>
+      <p id="result-percent" class="result-percent"></p>
+
+      <div class="result-actions">
+        <button id="btn-review" class="btn btn-secondary">Посмотреть ответы</button>
+        <button id="btn-restart" class="btn btn-primary">Пройти заново</button>
+      </div>
+
+      <section id="review-section" class="review-section" hidden aria-label="Разбор ответов">
+        <h3>Разбор ответов</h3>
+        <ul id="review-list" class="review-list"></ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
